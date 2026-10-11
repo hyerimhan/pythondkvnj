@@ -28,7 +28,7 @@ class WantedJobScrapper:
             page.goto(f"https://www.wanted.co.kr/search?query={keyword}&tab=position")
 
             for x in range(5):
-                time.sleep(5)
+                time.sleep(3)
                 page.keyboard.down("End")
 
             content = page.content()
