@@ -22,3 +22,5 @@ GitHub Pages supports only the saved keywords; scraping runs on your computer.
 4. Submit https://hyerimhan.github.io/pythondkvnj/
 
 For local Flask development: `python main.py`.
+
+If `docs/index.html` is absent, the workflow installs Chromium and runs the static build automatically in headless mode. Scraping failures stop deployment rather than publishing empty results. Committing locally generated `docs/` is recommended when Wanted blocks CI requests.

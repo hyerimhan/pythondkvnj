@@ -1,12 +1,13 @@
 from playwright.sync_api import sync_playwright
 import time
+import os
 from bs4 import BeautifulSoup
 import csv
 
 class WantedJobScrapper:
     def __init__(self):
         self.p = sync_playwright().start()
-        self.browser = self.p.chromium.launch(headless=False)
+        self.browser = self.p.chromium.launch(headless=os.environ.get("SCRAPER_HEADLESS") == "1")
         self.keywords = []
         self.result = []
 
