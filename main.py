@@ -7,10 +7,16 @@ app = Flask("JobScrapper")
 def home():
   return render_template("home.html")
 
+db = {}
+
 @app.route("/search")
 def search():
   keyword = request.args.get("keyword")
-  wanted_jobs = extract_wandted_jobs(keyword)
-  return render_template("search.html", keyword=keyword, jobs=wanted_jobs)
+  if keyword in db:
+    jobs=db[keyword]
+  else:
+    jobs = extract_wandted_jobs(keyword)
+    db[keyword] = jobs
+  return render_template("search.html", keyword=keyword, jobs=jobs)
 
 app.run("0.0.0.0", port=5000)
