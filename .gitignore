@@ -16,5 +16,6 @@ build/
 .idea/
 .vscode/
 
-.github/
 .venv
+# Local inspection files
+work/
