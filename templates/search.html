@@ -14,7 +14,15 @@
   </head>
   <body>
     <main class="container">
-      <h1>Search Results: "{{keyword}}"</h1>
+      <hgroup>
+        <h1>Search Results: "{{keyword}}"</h1>
+        <a
+          target="_blank"
+          href="/export?keyword={{keyword}}"
+        >
+          Export to file
+        </a>
+      </hgroup>
       <figure>
         <table class="striped">
           <thead>
