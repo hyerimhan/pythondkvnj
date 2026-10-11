@@ -23,4 +23,4 @@ GitHub Pages supports only the saved keywords; scraping runs on your computer.
 
 For local Flask development: `python main.py`.
 
-If `docs/index.html` is absent, the workflow installs Chromium and runs the static build automatically in headless mode. Scraping failures stop deployment rather than publishing empty results. Committing locally generated `docs/` is recommended when Wanted blocks CI requests.
+The workflow publishes committed `docs/` files only. It never scrapes on GitHub Actions. Generate the site locally and commit `docs/` before deployment. Empty directories are not tracked by Git. Running `wanted.py` alone does not save the Flask in-memory results as deployable HTML.
